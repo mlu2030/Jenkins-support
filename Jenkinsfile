@@ -53,7 +53,7 @@ pipeline {
                 echo 'deploying the application ...'
 
                 withCredentials([
-                    usernamePassword(credentials: 'MDE101', usernameVarriable: USER, passwordVariable: PWD)
+                    usernamePassword(credentials: 'MDE101', usernameVariable: USER, passwordVariable: PWD)
                 ]) {
                     echo "some script ${USER} ${PWD}"
                     echo "deploying version ${param.VERSION}"
