@@ -38,7 +38,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    BRANCH_NAME == 'main'
+                    param.executeTest
                 }
             }
 
@@ -55,8 +55,11 @@ pipeline {
                 withCredentials([
                     usernamePassword(credentials: 'MDE101', usernameVariable: USER, passwordVariable: PWD)
                 ]) {
-                    echo "some script ${USER} ${PWD}"
-                    echo "deploying version ${param.VERSION}"
+                    script {
+                        echo "username password ${USER} ${PWD}"
+                        echo "deploying version ${param.VERSION}"
+
+                    }
                 }
                 
             }
