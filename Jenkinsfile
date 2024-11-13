@@ -50,7 +50,7 @@ pipeline {
         }
 
         stage("integration test") {
-            if {
+            when {
                 expression {
                     BRANCH_NAME == 'main'
                 }
