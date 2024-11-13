@@ -10,9 +10,9 @@ pipeline {
         booleanParam(name: 'executeTest', defaultValue: true, description: '')
     }
 
-    tool {
-        maven 'Maven'
-    }
+    // tool {
+    //     maven 'Maven'
+    // }
 
     environment {
         NEW_VERSION = '1.3.0'
