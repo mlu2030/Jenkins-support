@@ -24,7 +24,7 @@ pipeline {
         stage("build") {
             when {
                 expression {
-                    BRANCH_NAME == 'develop' || env.BRANCH_NAME = 'main'
+                    BRANCH_NAME == 'develop' || env.BRANCH_NAME == 'main'
                 }
             }
 
