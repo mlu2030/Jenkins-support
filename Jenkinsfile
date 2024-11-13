@@ -1,5 +1,5 @@
 
-CODE_CHANGES = true
+// CODE_CHANGES = true
 
 pipeline {
 
@@ -36,20 +36,7 @@ pipeline {
             }
         }
 
-        stage("unit test") {
-            when {
-                expression {
-                    params.executeTest
-                }
-            }
-
-            steps {
-                echo 'testing the application ...'
-                
-            }
-        }
-
-        stage("integration test") {
+        stage("test") {
             when {
                 expression {
                     BRANCH_NAME == 'main'
