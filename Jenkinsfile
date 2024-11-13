@@ -37,9 +37,9 @@ pipeline {
         }
 
         stage("unit test") {
-            if {
+            when {
                 expression {
-                    param.executeTest
+                    params.executeTest
                 }
             }
 
