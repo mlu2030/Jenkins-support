@@ -44,6 +44,7 @@ pipeline {
 
             steps {
                 echo 'testing the application ...'
+                echo "${SERVER_CREDENTIALS}"
                 
             }
         }
