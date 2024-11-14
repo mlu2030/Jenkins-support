@@ -53,9 +53,9 @@ pipeline {
                 echo 'deploying the application ...'
 
                 withCredentials([
-                    usernamePassword(credentials: 'MDE101', usernameVariable: 'USER', passwordVariable: 'PWD')
+                    usernamePassword(credentialsId: 'MDE101', usernameVariable: 'USER', passwordVariable: 'PWD')
                 ]) {
-                    sh "echo ${USER}:${PWD}"
+                    sh 'echo \"${USER}:${PWD}\"'
                 }
             }
         }
