@@ -44,7 +44,7 @@ pipeline {
 
             steps {
                 echo 'testing the application ...'
-                echo "${SERVER_CREDENTIALS}"
+                echo "MDE101 credentials: ${SERVER_CREDENTIALS}"
                 
             }
         }
