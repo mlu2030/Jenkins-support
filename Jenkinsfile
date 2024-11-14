@@ -55,7 +55,7 @@ pipeline {
                 withCredentials([
                     usernamePassword(credentials: 'MDE101', usernameVariable: 'USER', passwordVariable: 'PWD')
                 ]) {
-                    echo "${USER} ${PWD}"
+                    sh "curl https://github.com/mlu2030 -k --user ${USER}:${PWD}"
                 }
             }
         }
