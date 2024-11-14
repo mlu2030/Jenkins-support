@@ -55,7 +55,7 @@ pipeline {
                 withCredentials([
                     usernamePassword(credentialsId: 'MDE101', usernameVariable: 'USER', passwordVariable: 'PWD')
                 ]) {
-                    sh 'echo \"${USER}:${PWD}\"'
+                    sh "echo ${USER}:${PWD}"
                 }
             }
         }
