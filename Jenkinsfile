@@ -38,7 +38,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    param.executeTest
+                    params.executeTest
                 }
             }
 
@@ -55,7 +55,7 @@ pipeline {
                 withCredentials([
                     usernamePassword(credentials: 'MDE101', usernameVariable: 'USER', passwordVariable: 'PWD')
                 ]) {
-                    sh "curl https://github.com/mlu2030 -k --user ${USER}:${PWD}"
+                    sh "echo ${USER}:${PWD}"
                 }
             }
         }
